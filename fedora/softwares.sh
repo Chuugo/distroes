@@ -13,8 +13,36 @@ else
   #UPDATE
   dnf update -y
   
-  dnf groupinstall "Development Tools" -y
+  sudo dnf install \
+    https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+   sudo dnf install \
+    kernel-devel \
+    kernel-headers \
+    gcc-c++ \
+    make \
+    git \
+    cmake \
+    dnf-utils \
+    policycoreutils-python-utils \
+    gcc \
+    bash-completion \
+    mariadb mariadb-server \
+    discord \
+    wine \
+    winetricks \
+    wget \
+    curl \
+    firefox \
+    htop \
+    ntfs-3g \
+    flameshot -y
+    
+  
   sudo dnf install thunar-megasync-Fedora_37.x86_64.rpm -y
+  
+  dnf groupinstall "Development Tools" -y
   
   #kvm
   dnf group install --with-optional virtualization -y
@@ -38,13 +66,11 @@ else
   cd ..
   
   #java
-  #dnf install https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.rpm -y
+  dnf install https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.rpm -y
   
-  #multimc
-  #wget https://files.multimc.org/downloads/mmc-stable-lin64.tar.gz
-   
-  #mega
-  
+  #libreoffice
+  wget https://download.documentfoundation.org/libreoffice/stable/7.3.7/rpm/x86_64/LibreOffice_7.3.7_Linux_x86-64_rpm.tar.gz
+  tar xzf LibreOffice_7.3.7_Linux_x86-64_rpm.tar.gz   
  
   echo "GCC version"
   gcc --version
