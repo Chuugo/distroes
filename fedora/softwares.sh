@@ -58,6 +58,10 @@ else
   dnf check-update
   sudo dnf install code -y
   
+  #google chrome
+  dnf config-manager --set-enabled google-chrome
+  dnf install google-chrome-stable
+  
   #VMWARE WS PRO 16
   chmod +x VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle
   ./VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle
