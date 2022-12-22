@@ -37,6 +37,7 @@ else
     firefox \
     htop \
     ntfs-3g \
+    remmina \
     flameshot -y
     
   
